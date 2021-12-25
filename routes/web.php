@@ -20,4 +20,7 @@ Route::get('/', function () {
 
 Route::get('/dashboard', [KataController::class,'index'])->middleware(['auth'])->name('dashboard');
 
+Route::resource('/kata', KataController::class)->middleware(['auth']);
+
+
 require __DIR__.'/auth.php';

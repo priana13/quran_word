@@ -238,8 +238,8 @@
               <div class="card-header border-0">
                 <h3 class="card-title">Daftar Kosa Kata Tersedia</h3>
                 <div class="card-tools">
-                  <a href="#" class="btn btn-sm btn-tool">
-                    <i class="fas fa-download"></i>
+                  <a href="{{ route('kata.create') }}" class="btn btn-sm btn-tool">
+                    <i class="fas fa-pen"></i>
                   </a>
                   <a href="#" class="btn btn-sm btn-tool">
                     <i class="fas fa-bars"></i>
@@ -255,7 +255,7 @@
                     </p>
                     <p class="d-flex flex-column text-right">
                       <span class="font-weight-bold">
-                        <i class="ion ion-android-arrow-up text-success"></i> 12%
+                        <i class="ion ion-android-arrow-up text-success"></i> 12
                       </span>
                       <span class="text-muted">{{ $row->arti }}</span>
                     </p>

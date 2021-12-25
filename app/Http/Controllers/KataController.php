@@ -27,7 +27,7 @@ class KataController extends Controller
      */
     public function create()
     {
-        //
+        return view('kata.add');
     }
 
     /**
