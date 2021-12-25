@@ -247,18 +247,22 @@
                 </div>
               </div>
               <div class="card-body">
-                <div class="d-flex justify-content-between align-items-center border-bottom mb-3">
-                  <p class="text-success text-xl">
-                    <i class="ion ion-ios-refresh-empty"></i>
-                  </p>
-                  <p class="d-flex flex-column text-right">
-                    <span class="font-weight-bold">
-                      <i class="ion ion-android-arrow-up text-success"></i> 12%
-                    </span>
-                    <span class="text-muted">CONVERSION RATE</span>
-                  </p>
-                </div>
-                <!-- /.d-flex -->
+                @foreach($data as $row)
+                  <div class="d-flex justify-content-between align-items-center border-bottom mb-3">
+                    <p class="text-success text-xl">
+                      {{-- <i class="ion ion-ios-refresh-empty"></i> --}}
+                      {{ $row->kata }}
+                    </p>
+                    <p class="d-flex flex-column text-right">
+                      <span class="font-weight-bold">
+                        <i class="ion ion-android-arrow-up text-success"></i> 12%
+                      </span>
+                      <span class="text-muted">{{ $row->arti }}</span>
+                    </p>
+                  </div>
+                @endforeach
+
+                {{-- <!-- /.d-flex -->
                 <div class="d-flex justify-content-between align-items-center border-bottom mb-3">
                   <p class="text-warning text-xl">
                     <i class="ion ion-ios-cart-outline"></i>
@@ -281,7 +285,7 @@
                     </span>
                     <span class="text-muted">REGISTRATION RATE</span>
                   </p>
-                </div>
+                </div> --}}
                 <!-- /.d-flex -->
               </div>
             </div>

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\KataController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,8 +18,6 @@ Route::get('/', function () {
     return redirect()->route('login');
 });
 
-Route::get('/dashboard', function () {
-    return view('welcome');
-})->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard', [KataController::class,'index'])->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
