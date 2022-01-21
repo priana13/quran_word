@@ -198,6 +198,15 @@
               </li>            
             </ul>
           </li> 
+
+          <li class="nav-item">
+            <form action="/logout" method="post">
+              <buttom class="nav-link" type="submit">
+                <i class="far fa-logout nav-icon"></i>
+                Logout</buttom>
+            </form>
+
+          </li>
         
         </ul>
       </nav>
