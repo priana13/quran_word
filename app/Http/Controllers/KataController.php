@@ -15,9 +15,11 @@ class KataController extends Controller
      */
     public function index()
     {
-        $data = Kata::paginate(10);      
+        $title = "List Kata";
+        $data = Kata::paginate(10);
 
-        return view('kata.index',compact('data'));
+
+        return view('kata.index',compact(['data','title']));
     }
 
     /**
@@ -27,7 +29,9 @@ class KataController extends Controller
      */
     public function create()
     {
-        return view('kata.add');
+        $title = "Tambah Kata";
+
+        return view('kata.add', compact(['title']));
     }
 
     /**
