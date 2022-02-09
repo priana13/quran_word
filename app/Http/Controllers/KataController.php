@@ -42,9 +42,17 @@ class KataController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
+        // $data = $request->all();
+        // dd($data);
 
-        return $data;
+        $kata = Kata::insertGetId([
+                "kata" => $request->get('kata'),
+                "arti" => $request->get('arti')
+                ]);
+
+        // insert ke table kata_ayat
+
+        return redirect()->route('kata.index');
     }
 
     /**
