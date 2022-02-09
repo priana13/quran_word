@@ -7,17 +7,56 @@
       <div class="container-fluid">
         
         <div class="row">
-        <form>
-            <div class="mb-3">
-                <label for="kata" class="form-label">Kata</label>
-                <input type="text" class="form-control" id="kata" aria-describedby="kata">
+
+            <div class="col-md-6">
+              <!-- Form Element sizes -->
+              <div class="card card-success">
+                  <div class="card-header">
+                    <!-- <h3 class="card-title">Different Height</h3> -->
+                  </div>
+                  <form action="{{route('kata.store')}}" method="post">
+                    @csrf
+
+                   <div class="card-body">
+                    
+                      <input class="form-control form-control-lg" type="text" placeholder="Kata" name="kata">
+                      <br>
+                      <input class="form-control" type="text" placeholder="Arti" name="arti">
+                      <br>
+
+                      <div class="form-group">
+                        <label for="exampleSelectBorder">Surat</label>
+                        <select class="custom-select form-control-border" id="surat" name="suarat">
+                          <option>Al-Fatihah</option>
+                          <option>Al-Baqoroh</option>
+                          <option>Al-Imron</option>
+                        </select>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="exampleSelectBorder">Ayat</label>
+                        <select class="custom-select form-control-border" id="ayat" name="ayat">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                        </select>
+                      </div>
+
+                    </div>
+                    <!-- /.card-body -->
+
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary">Simpan</button>
+                    </div>
+                  </form>
+                </div>
+                <!-- /.card -->
             </div>
-            <div class="mb-3">
-                <label for="arti" class="form-label">Arti</label>
-                <input type="arti" class="form-control" id="arti">
-            </div>
-            <button type="submit" class="btn btn-primary">Save</button>
-        </form>
+            <!-- col-md -->
+
+
+
+        
 
         </div>
         <!-- /.row -->
