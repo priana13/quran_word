@@ -74,7 +74,11 @@ class KataController extends Controller
      */
     public function edit($id)
     {
-        //
+        $title = "Edit Kata";
+
+        $kata = Kata::find($id);
+
+        return view('kata.edit', compact(['title', 'kata']));
     }
 
     /**

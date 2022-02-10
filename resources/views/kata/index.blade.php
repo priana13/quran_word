@@ -15,7 +15,8 @@
                 <h3 class="card-title">Daftar Kosa Kata Tersedia</h3>
                 <div class="card-tools">
                   <a href="{{ route('kata.create') }}" class="btn btn-sm btn-tool">
-                    <i class="fas fa-pen"></i>
+                    Tambah
+                    <i class="fas fa-paper-plane"> </i>
                   </a>
                   <a href="#" class="btn btn-sm btn-tool">
                     <i class="fas fa-bars"></i>
@@ -28,7 +29,13 @@
                     <p class="text-success text-xl">
                       {{-- <i class="ion ion-ios-refresh-empty"></i> --}}
                       {{ $row->kata }}
+                        
+                      <a href="{{ route('kata.edit', $row->id) }}" class="btn btn-sm btn-tool">
+                       <i class="fas fa-pen fa-sm"></i>
+                      </a>
                     </p>
+                   
+
                     <p class="d-flex flex-column text-right">
                       <span class="font-weight-bold">
                         <i class="ion ion-android-arrow-up text-success"></i> 12
