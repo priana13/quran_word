@@ -14,7 +14,8 @@
                   <div class="card-header">
                     <!-- <h3 class="card-title">Different Height</h3> -->
                   </div>
-                  <form action="{{route('kata.store')}}" method="post">
+                  <form action="{{route('kata.update', $kata->id)}}" method="post">
+                    @method('put')
                     @csrf
 
                    <div class="card-body">

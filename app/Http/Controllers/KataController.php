@@ -90,7 +90,13 @@ class KataController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $kata = Kata::find($id);
+
+        $kata->kata = $request->get('kata');
+        $kata->arti = $request->get('arti');
+        $kata->save();
+
+        return redirect(route('kata.index'));
     }
 
     /**
