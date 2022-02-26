@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KataController;
+use App\Http\Controllers\AyatController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,6 @@ Route::get('/', function () {
 Route::get('/dashboard', [KataController::class,'index'])->middleware(['auth'])->name('dashboard');
 
 Route::resource('/kata', KataController::class)->middleware(['auth']);
-
+Route::resource('/ayat', AyatController::class)->middleware(['auth']);
 
 require __DIR__.'/auth.php';
