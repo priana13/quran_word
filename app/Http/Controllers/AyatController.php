@@ -44,7 +44,8 @@ class AyatController extends Controller
             "ayat" => $request->get('ayat'),
             "arti" => $request->get('arti'),
             "halaman" => $request->get('halaman'),
-            "juz" => $request->get('juz')
+            "juz" => $request->get('juz'),
+            "surat_id" => $request->get('surat')
             ]);
 
         // insert ke table kata_ayat
@@ -71,7 +72,9 @@ class AyatController extends Controller
      */
     public function edit($id)
     {
-        //
+        $ayat = Ayat::find($id);
+        
+        return view('ayat.edit',compact('ayat'));
     }
 
     /**

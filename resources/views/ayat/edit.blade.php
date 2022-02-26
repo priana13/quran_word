@@ -14,24 +14,25 @@
                   <div class="card-header">
                     <!-- <h3 class="card-title">Different Height</h3> -->
                   </div>
-                  <form action="{{route('ayat.store')}}" method="post">
+                  <form action="{{route('ayat.update' , $ayat->id)}}" method="post">
+                    @method('put')
                     @csrf
 
                    <div class="card-body">
                     
-                      <input class="form-control form-control-lg" type="text" placeholder="Nama Ayat" name="ayat">
+                      <input class="form-control form-control-lg" type="text" placeholder="Nama Ayat" name="ayat" value="{{$ayat->ayat}}">
                       <br>
-                      <input class="form-control" type="text" placeholder="Arti Ayat" name="arti">
+                      <input class="form-control" type="text" placeholder="Arti Ayat" name="arti" value="{{$ayat->arti}}">
                       <br>
 
                       <div class="form-group">
                         <!-- <label >Halaman</label> -->
-                        <input class="form-control" type="number" name="halaman" placeholder="Halaman" >
+                        <input class="form-control" type="number" name="halaman" placeholder="Halaman" value="{{$ayat->halaman}}">
                       </div>
 
                       <div class="form-group">
                         <!-- <label >Juz</label> -->
-                        <input class="form-control" type="number" name="juz" placeholder="Juz" >
+                        <input class="form-control" type="number" name="juz" placeholder="Juz" value="{{$ayat->juz}}">
                       </div>
 
                       <div class="form-group">

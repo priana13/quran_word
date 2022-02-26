@@ -20,6 +20,8 @@ class CreateAyatTable extends Migration
             $table->string('arti',100);
             $table->integer('halaman');
             $table->integer('juz');
+            $table->foreignId('surat_id');
+            $table->foreign('surat_id')->references('id')->on('surat');
             $table->timestamps();
         });
     }

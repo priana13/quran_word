@@ -66,6 +66,8 @@
                       <span class="text-muted">{{ $row->arti }}</span>
                     </p>
                   </td>
+                  
+                
                     </tr>
                     @endforeach
                   </thead>

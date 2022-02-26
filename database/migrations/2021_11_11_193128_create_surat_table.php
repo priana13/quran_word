@@ -18,6 +18,7 @@ class CreateSuratTable extends Migration
             $table->string('nama_surat');
             $table->string('arti');
             $table->text('deskripsi')->nullable();
+            $table->integer('jumlah_ayat')->nullable();
             $table->timestamps();
         });
     }
