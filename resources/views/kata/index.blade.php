@@ -25,7 +25,7 @@
               </div>
               <div class="card-body">
                 @foreach($data as $row)
-                  <div class="d-flex justify-content-between align-items-center border-bottom mb-3">
+                  <div class="d-flex lign-items-center border-bottom mb-3">
                     <p class="text-success text-xl">
                       {{-- <i class="ion ion-ios-refresh-empty"></i> --}}
                       {{ $row->kata }}
@@ -33,7 +33,21 @@
                       <a href="{{ route('kata.edit', $row->id) }}" class="btn btn-sm btn-tool">
                        <i class="fas fa-pen fa-sm"></i>
                       </a>
+                      <br>
                     </p>
+
+                   
+                    <!-- <div class="d-flex justify-content-between align-items-center border-bottom mb-3"> -->
+
+                    <form  action="{{ route('kata.destroy', $row->id) }}" method ="post">
+                        @csrf
+                        @method('delete')
+                        <input type="submit" value="delete" class="btn btn-sm btn-tool">
+                        <!-- <i class="fas fa-trash fa-sm"></i> -->
+                        </input>
+                    </form>                     
+
+
                    
 
                     <p class="d-flex flex-column text-right">

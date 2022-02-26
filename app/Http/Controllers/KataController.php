@@ -63,7 +63,7 @@ class KataController extends Controller
      */
     public function show($id)
     {
-        //
+        return "ini adalah halaman detail dengan id" . $id;
     }
 
     /**
@@ -107,6 +107,10 @@ class KataController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $kata = Kata::find($id);
+        $kata->delete();
+
+        return redirect()->back();
+
     }
 }
