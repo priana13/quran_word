@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Ayat;
+use App\Models\Surat;
+
 
 class AyatController extends Controller
 {
@@ -28,6 +30,7 @@ class AyatController extends Controller
     {
 
         $data['title'] = "Tambah Ayat";
+        $data['surat'] = Surat::all();
 
         return view('ayat.add',$data);
     }
@@ -72,9 +75,11 @@ class AyatController extends Controller
      */
     public function edit($id)
     {
-        $ayat = Ayat::find($id);
+        $data['ayat'] = Ayat::find($id);
+        $data['surat'] = Surat::all();
+
         
-        return view('ayat.edit',compact('ayat'));
+        return view('ayat.edit',$data);
     }
 
     /**
@@ -86,7 +91,21 @@ class AyatController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        // put validation rule here
+
+        $ayat = Ayat::find($id);
+
+        $ayat->ayat =  $request->get('ayat');
+        $ayat->arti = $request->get('arti');
+        $ayat->halaman = $request->get('halaman');
+        $ayat->juz = $request->get('juz');
+        $ayat->surat_id = $request->get('surat');
+        $ayat->save();
+
+        return redirect()->route('ayat.index');
+
+
     }
 
     /**

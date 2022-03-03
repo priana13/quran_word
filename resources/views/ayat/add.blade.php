@@ -36,8 +36,9 @@
 
                       <div class="form-group">
                         <select name="surat" class="form-control" id="">
-                          <option value="1">Surat 1</option>
-                          <option value="2">Surat 2</option>
+                          @foreach($surat as $row)
+                            <option value="{{$row->id}}">{{$row->nama_surat}}</option>
+                          @endforeach
                         </select>
                       </div>
 
