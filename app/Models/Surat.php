@@ -10,4 +10,6 @@ class Surat extends Model
     use HasFactory;
 
     protected $table = 'surat';
+
+    protected $guarded = [];
 }

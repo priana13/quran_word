@@ -36,14 +36,14 @@
                         {{-- <i class="ion ion-ios-refresh-empty"></i> --}}
                         {{ $row->nama_surat }}
                        
-                        <form class="form-inline"  action="{{ route('ayat.destroy', $row->id) }}" method ="post">
+                        <form class="form-inline"  action="{{ route('surat.destroy', $row->id) }}" method ="post">
                         @csrf
                         @method('delete')
                         <input type="submit" value="delete" class="btn btn-sm btn-tool">
                         <!-- <i class="fas fa-trash fa-sm"></i> -->
                         </input>
 
-                        <a href="{{ route('ayat.edit', $row->id) }}" class="btn btn-sm btn-tool">
+                        <a href="{{ route('surat.edit', $row->id) }}" class="btn btn-sm btn-tool">
                         <i class="fas fa-pen fa-sm"></i>
                         </a>
                         

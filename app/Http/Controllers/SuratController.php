@@ -38,7 +38,25 @@ class SuratController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $validated = $request->validate([
+            'nama_surat' => 'required|string|max:255',
+            'arti' => 'string|max:100',
+            'deskripsi' => 'string',
+            'jumlah_ayat' => 'numeric'
+        ]);
+
+
+        $surat = Surat::insertGetId([
+            "nama_surat" => $request->get('nama_surat'),
+            "arti" => $request->get('arti'),
+            "deskripsi" => $request->get('deskripsi'),
+            "jumlah_ayat" => $request->get('jumlah_ayat'),
+            ]);
+
+        // insert ke table kata_ayat
+
+        return redirect()->route('surat.index');
     }
 
     /**
@@ -60,7 +78,9 @@ class SuratController extends Controller
      */
     public function edit($id)
     {
-        //
+        $surat = Surat::find($id);
+
+        return view('surat.edit',compact('surat'));
     }
 
     /**
@@ -72,7 +92,23 @@ class SuratController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validated = $request->validate([
+            'nama_surat' => 'required|string|max:255',
+            'arti' => 'string|max:100',
+            'deskripsi' => 'string',
+            'jumlah_ayat' => 'numeric'
+        ]);
+
+
+        $surat = Surat::find($id);
+
+        $surat->nama_surat = $request->nama_surat;
+        $surat->arti = $request->arti;
+        $surat->deskripsi = $request->deskripsi;
+        $surat->jumlah_ayat = $request->jumlah_ayat;
+        $surat->save();
+
+        return redirect()->route('surat.index');
     }
 
     /**
@@ -83,6 +119,10 @@ class SuratController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $surat = Surat::find($id);
+
+        $surat->delete();
+
+        return redirect()->route('surat.index');
     }
 }

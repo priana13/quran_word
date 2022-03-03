@@ -14,24 +14,25 @@
                   <div class="card-header">
                     <!-- <h3 class="card-title">Different Height</h3> -->
                   </div>
-                  <form action="{{route('surat.store')}}" method="post">
+                  <form action="{{route('surat.update',$surat->id)}}" method="post">
                     @csrf
+                    @method('put')
 
                    <div class="card-body">
                     
-                      <input class="form-control form-control-lg" type="text" placeholder="Nama Surat" name="nama_surat">
+                      <input class="form-control form-control-lg" type="text" placeholder="Nama Surat" name="nama_surat" value="{{$surat->nama_surat}}">
                       <br>
-                      <input class="form-control" type="text" placeholder="Arti" name="arti">
+                      <input class="form-control" type="text" placeholder="Arti" name="arti" value="{{$surat->arti}}">
                       <br>
 
                       <div class="form-group">
                         <!-- <label >Halaman</label> -->
-                        <textarea class="form-control" rows="5" cols="10" name="deskripsi" placeholder="Deskripsi Surat"></textarea>
+                        <textarea class="form-control" rows="5" cols="10" name="deskripsi" placeholder="Deskripsi Surat">{{$surat->deskripsi}}</textarea>
                       </div>
 
                       <div class="form-group">
                         <!-- <label >Halaman</label> -->
-                        <input class="form-control" type="number" name="jumlah_ayat" placeholder="Jumlah Ayat" >
+                        <input class="form-control" type="number" name="jumlah_ayat" placeholder="Jumlah Ayat" value="{{$surat->jumlah_ayat}}">
                       </div>
 
                       
