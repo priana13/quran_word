@@ -164,6 +164,16 @@
             </a>
 
           </li>
+
+          <li class="nav-item">
+            <a href="{{route('surat.index')}}" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Surat
+              </p>
+            </a>
+          </li>
+
           <li class="nav-item">
             <a href="{{route('ayat.index')}}" class="nav-link">
               <i class="nav-icon fas fa-th"></i>

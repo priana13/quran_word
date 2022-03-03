@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KataController;
 use App\Http\Controllers\AyatController;
+use App\Http\Controllers\SuratController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -23,5 +25,7 @@ Route::get('/dashboard', [KataController::class,'index'])->middleware(['auth'])-
 
 Route::resource('/kata', KataController::class)->middleware(['auth']);
 Route::resource('/ayat', AyatController::class)->middleware(['auth']);
+Route::resource('/surat', SuratController::class)->middleware(['auth']);
+
 
 require __DIR__.'/auth.php';
