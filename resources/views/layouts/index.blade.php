@@ -156,7 +156,7 @@
                with font-awesome or any other icon font library -->
           <li class="nav-item menu-open">
             <a href="{{route('kata.index')}}" class="nav-link active">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="nav-icon fas fa-file-word"></i>
               <p>
                 Kosa Kata
                 {{-- <i class="right fas fa-angle-left"></i> --}}
@@ -167,7 +167,7 @@
 
           <li class="nav-item">
             <a href="{{route('surat.index')}}" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+              <i class="nav-icon fas fa-scroll"></i>
               <p>
                 Surat
               </p>
@@ -176,7 +176,7 @@
 
           <li class="nav-item">
             <a href="{{route('ayat.index')}}" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+              <i class="nav-icon fas fa-align-center"></i>
               <p>
                 Ayat
                 {{-- <span class="right badge badge-danger">New</span> --}}
@@ -186,7 +186,7 @@
 
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
+              <i class="nav-icon fas fa-cogs"></i>
               <p>
                 Config
                 <i class="fas fa-angle-left right"></i>
