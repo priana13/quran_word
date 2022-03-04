@@ -10,4 +10,6 @@ class KataAyat extends Model
     use HasFactory;
 
     protected $table = 'kata_ayat';
+
+    protected $guarded = [];
 }

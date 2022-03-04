@@ -27,18 +27,14 @@
                       <div class="form-group">
                         <label for="exampleSelectBorder">Surat</label>
                         <select class="custom-select form-control-border" id="surat" name="suarat">
-                          <option>Al-Fatihah</option>
-                          <option>Al-Baqoroh</option>
-                          <option>Al-Imron</option>
+                          <option value="1">Al-Fatihah</option>
                         </select>
                       </div>
 
                       <div class="form-group">
                         <label for="exampleSelectBorder">Ayat</label>
                         <select class="custom-select form-control-border" id="ayat" name="ayat">
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
+                          <option value="1">1</option>
                         </select>
                       </div>
 

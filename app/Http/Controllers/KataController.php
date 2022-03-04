@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Kata;
+use App\Models\KataAyat;
+
 
 class KataController extends Controller
 {
@@ -50,6 +52,12 @@ class KataController extends Controller
                 "arti" => $request->get('arti')
                 ]);
 
+            
+        KataAyat::insert([
+            "kata_id" => $kata,
+            "ayat_id" => $request->get('ayat'),
+            // "surat_id" => $request->get('surat')
+        ]);
         // insert ke table kata_ayat
 
         return redirect()->route('kata.index');
