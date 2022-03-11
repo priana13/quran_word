@@ -195,7 +195,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/layout/top-nav.html" class="nav-link">
+                <a href="{{route('user.index')}}" class="nav-link {{(request()->routeIs('user.index'))? 'active' : ''}}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>User</p>
                 </a>
