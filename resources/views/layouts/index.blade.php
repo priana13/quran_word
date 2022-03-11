@@ -155,7 +155,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item menu-open">
-            <a href="{{route('kata.index')}}" class="nav-link active">
+            <a href="{{route('kata.index')}}" class="nav-link {{(request()->routeIs('kata.index'))? 'active' : ''}}">
               <i class="nav-icon fas fa-file-word"></i>
               <p>
                 Kosa Kata
@@ -166,7 +166,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="{{route('surat.index')}}" class="nav-link">
+            <a href="{{route('surat.index')}}" class="nav-link {{(request()->routeIs('surat.index'))? 'active' : ''}}">
               <i class="nav-icon fas fa-scroll"></i>
               <p>
                 Surat
@@ -175,7 +175,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="{{route('ayat.index')}}" class="nav-link">
+            <a href="{{route('ayat.index')}}" class="nav-link {{(request()->routeIs('ayat.index'))? 'active' : ''}}">
               <i class="nav-icon fas fa-align-center"></i>
               <p>
                 Ayat
@@ -197,7 +197,7 @@
               <li class="nav-item">
                 <a href="pages/layout/top-nav.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>App Configuration</p>
+                  <p>User</p>
                 </a>
               </li>
               <li class="nav-item">
