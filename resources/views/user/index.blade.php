@@ -54,7 +54,7 @@
                         </td>
 
                         <td>
-                          {{ $row->status }}
+                          {{ $row->privilage }}
                         </td>
 
                         <td>
