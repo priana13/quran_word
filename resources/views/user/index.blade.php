@@ -29,58 +29,65 @@
                <div class="table-responsive">
                 <table class="table">
                   <thead>
-                    @foreach($users as $row)
-                    <tr>
-                      <td>
-                      <p class="text-success text-xl">
-                        {{-- <i class="ion ion-ios-refresh-empty"></i> --}}
-                        {{ $row->name }}
-                       
-                        <form class="form-inline"  action="{{ route('kata.destroy', $row->id) }}" method ="post">
-                        @csrf
-                        @method('delete')
-                        <input type="submit" value="delete" class="btn btn-sm btn-tool">
-                        <!-- <i class="fas fa-trash fa-sm"></i> -->
-                        </input>
-
-                        <a href="{{ route('kata.edit', $row->id) }}" class="btn btn-sm btn-tool">
-                        <i class="fas fa-pen fa-sm"></i>
-                        </a>
-                        
-                      </form>  
-                    
-                      </p>
-
-
-                      
-
-
-
-                    </td>
-                      <td>
-                        
-                    <p class="d-flex flex-column text-right">
-                      <span class="font-weight-bold">
-                        <i class="ion ion-android-arrow-up text-success"></i> 12
-                      </span>
-                      <span class="text-muted">{{ $row->arti }}</span>
-                    </p>
-                  </td>
-                    </tr>
-                    @endforeach
                   </thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Privilage</th>
+                    <th>Action</th>
+                  </tr>
+
+                  <tbody>
+                    @foreach($users as $row)
+                      <tr>
+                        <td>
+                          <i class="ion ion-person"></i>
+                          {{ $row->name }}
+                        </td>
+                        <td>                        
+                          <p class="">
+                            <span class="">
+                              <i class="ion ion-email text-success"></i> {{ $row->email }}
+                            </span>
+                            <span class="text-muted">{{ $row->privilage }}</span>
+                          </p>
+                        </td>
+
+                        <td>
+                          {{ $row->status }}
+                        </td>
+
+                        <td>
+                          <form class="form-inline"  action="{{ route('kata.destroy', $row->id) }}" method ="post">
+                            @csrf
+                            @method('delete')
+                            <input type="submit" value="delete" class="btn btn-sm btn-tool">
+                            <!-- <i class="fas fa-trash fa-sm"></i> -->                       
+
+                            <a href="{{ route('kata.edit', $row->id) }}" class="btn btn-sm btn-tool">
+                            <i class="fas fa-pen fa-sm"></i>
+                            </a>
+                        </form> 
+
+                        </td>
+
+
+                      </tr>
+                    @endforeach
+                  </tbody>
                 </table>
                </div>
-
+             
           </div>
         </div>
         <!-- akhir card -->
+        
       </div>
       <!-- akhir col -->
 
     </div>
     <!-- akhir row -->
-
+    {{-- {{ $users->links() }} --}}
   </div>
 </div>
 
