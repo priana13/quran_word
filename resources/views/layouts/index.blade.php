@@ -209,11 +209,13 @@
             </ul>
           </li> 
 
-          <li class="nav-item">
-            <form action="/logout" method="post">
-              <buttom class="nav-link" type="submit">
+          <li class="nav-item mt-2">
+            <form action="{{ route('logout') }}" method="post">
+              @csrf 
+              <button class="btn btn-sm btn-primary" type="submit">
                 <i class="far fa-logout nav-icon"></i>
-                Logout</buttom>
+                Logout
+              </button>              
             </form>
 
           </li>
