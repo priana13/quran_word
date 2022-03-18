@@ -49,12 +49,12 @@
                             <span class="">
                               <i class="ion ion-email text-success"></i> {{ $row->email }}
                             </span>
-                            <span class="text-muted">{{ $row->privilage }}</span>
+                            <!-- <span class="text-muted">{{ $row->rule }}</span> -->
                           </p>
                         </td>
 
                         <td>
-                          {{ $row->privilage }}
+                          {{ $row->rule }}
                         </td>
 
                         <td>
