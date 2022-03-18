@@ -13,7 +13,7 @@
             <div class="card-title">List Users</div>
 
             <div class="card-tools">
-                  <a href="{{ route('kata.create') }}" class="btn btn-sm btn-primary">
+                  <a href="{{ route('user.create') }}" class="btn btn-sm btn-primary">
                     Tambah
                     <i class="fas fa-plus"> </i>
                   </a>
