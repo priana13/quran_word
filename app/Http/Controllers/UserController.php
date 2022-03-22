@@ -79,8 +79,11 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        //
+    {       
+
+        return view('user.edit', [
+            'user' => User::find($id)
+        ]);
     }
 
     /**
@@ -92,7 +95,22 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request , [
+            'name' => ['required' , 'string'], 
+            'phone' => ['max:15'], 
+            'email' => ['email'], 
+            'rule' => ['required' ,'string']
+        ]);
+
+        $user = User::find($id);
+
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->phone = $request->phone;
+        $user->rule = $request->rule;
+        $user->save();
+
+        return redirect()->route('user.index');
     }
 
     /**
@@ -103,6 +121,15 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user= User::find($id);
+
+        // if(Auth::id() == 'super'){
+
+        //     $cek_super = User::where('rule', 'super')->count();
+
+        // }
+        
+
+        $user->delete();
     }
 }

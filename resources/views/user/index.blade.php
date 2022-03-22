@@ -58,13 +58,14 @@
                         </td>
 
                         <td>
-                          <form class="form-inline"  action="{{ route('kata.destroy', $row->id) }}" method ="post">
+                          <form class="form-inline"  action="{{ route('user.destroy', $row->id) }}" method ="post">
                             @csrf
                             @method('delete')
-                            <input type="submit" value="delete" class="btn btn-sm btn-tool">
+                            <a type="submit"                           
+                            value="delete" class="btn btn-sm btn-tool">
                             <!-- <i class="fas fa-trash fa-sm"></i> -->                       
 
-                            <a href="{{ route('kata.edit', $row->id) }}" class="btn btn-sm btn-tool">
+                            <a href="{{ route('user.edit', $row->id) }}" class="btn btn-sm btn-tool">
                             <i class="fas fa-pen fa-sm"></i>
                             </a>
                         </form> 
