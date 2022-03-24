@@ -12,7 +12,7 @@ class UserController extends Controller
 {
 
     public function __construct(){
-        
+
     }
     /**
      * Display a listing of the resource.
@@ -80,7 +80,9 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = User::find($id);
+
+        return view('user.detail' , compact('user') );
     }
 
     /**
@@ -142,5 +144,12 @@ class UserController extends Controller
         
 
         $user->delete();
+    }
+
+    public function profile(){
+
+        $user = User::find( auth()->id() );
+
+        return view('user.detail' , compact('user') );
     }
 }
