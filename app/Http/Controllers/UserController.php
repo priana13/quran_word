@@ -6,9 +6,14 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
+
+    public function __construct(){
+        
+    }
     /**
      * Display a listing of the resource.
      *
@@ -16,6 +21,12 @@ class UserController extends Controller
      */
     public function index()
     {
+        if(Auth::user()->rule != 'super') {
+
+            return redirect('dashboard');
+
+        }
+
         $users = User::paginate(10);
 
         return view('user.index', compact('users'));
