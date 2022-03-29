@@ -26,6 +26,8 @@
 
           <div class="card-body">
 
+          
+
                <div class="table-responsive">
                 <table class="table">
                   <thead>
@@ -61,7 +63,7 @@
                           <form class="form-inline"  action="{{ route('user.destroy', $row->id) }}" method ="post">
                             @csrf
                             @method('delete')
-                            <a type="submit"                           
+                            <input type="submit"                           
                             value="delete" class="btn btn-sm btn-tool">
                             <!-- <i class="fas fa-trash fa-sm"></i> -->                       
 

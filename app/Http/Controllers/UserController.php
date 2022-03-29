@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -123,11 +124,11 @@ class UserController extends Controller
     {
         $user= User::find($id);
 
-        // if(Auth::id() == 'super'){
+        if(Auth::id() == $id){
 
-        //     $cek_super = User::where('rule', 'super')->count();
+           return redirect()->back()->with('message', 'You dont delete your self');
 
-        // }
+        }
         
 
         $user->delete();
