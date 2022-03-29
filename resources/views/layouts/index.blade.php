@@ -166,15 +166,6 @@
           </li>
 
           <li class="nav-item">
-            <a href="{{route('surat.index')}}" class="nav-link {{(request()->routeIs('surat.index'))? 'active' : ''}}">
-              <i class="nav-icon fas fa-scroll"></i>
-              <p>
-                Surat
-              </p>
-            </a>
-          </li>
-
-          <li class="nav-item">
             <a href="{{route('ayat.index')}}" class="nav-link {{(request()->routeIs('ayat.index'))? 'active' : ''}}">
               <i class="nav-icon fas fa-align-center"></i>
               <p>
@@ -183,6 +174,17 @@
               </p>
             </a>
           </li>
+
+          <li class="nav-item">
+            <a href="{{route('surat.index')}}" class="nav-link {{(request()->routeIs('surat.index'))? 'active' : ''}}">
+              <i class="nav-icon fas fa-scroll"></i>
+              <p>
+                Surat
+              </p>
+            </a>
+          </li>
+
+
 
           @if(Auth::user()->rule == 'super')
 

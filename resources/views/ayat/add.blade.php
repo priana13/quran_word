@@ -19,7 +19,7 @@
 
                    <div class="card-body">
                     
-                      <input class="form-control form-control-lg" type="text" placeholder="Nama Ayat" name="ayat">
+                      <input class="form-control form-control-lg" type="text" placeholder="Ayat" name="ayat">
                       <br>
                       <input class="form-control" type="text" placeholder="Arti Ayat" name="arti">
                       <br>

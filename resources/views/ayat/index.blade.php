@@ -40,9 +40,7 @@
                         @csrf
                         @method('delete')
                         <input type="submit" value="delete" class="btn btn-sm btn-tool">
-                        <!-- <i class="fas fa-trash fa-sm"></i> -->
-                        </input>
-
+                        
                         <a href="{{ route('ayat.edit', $row->id) }}" class="btn btn-sm btn-tool">
                         <i class="fas fa-pen fa-sm"></i>
                         </a>
@@ -73,6 +71,8 @@
                   </thead>
                 </table>
                </div>
+
+               {{ $data->links() }}
 
           </div>
         </div>

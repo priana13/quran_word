@@ -71,7 +71,7 @@
                   </thead>
                 </table>
                </div>
-
+               {{ $data->links() }}
           </div>
         </div>
         <!-- akhir card -->

@@ -73,7 +73,7 @@
                   </thead>
                 </table>
                </div>
-
+               {{ $surat->links() }}
           </div>
         </div>
         <!-- akhir card -->
