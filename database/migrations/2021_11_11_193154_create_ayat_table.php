@@ -18,6 +18,7 @@ class CreateAyatTable extends Migration
             $table->string('ayat');
             $table->text('deskripsi')->nullable();
             $table->string('arti',100);
+            $table->integer('urutan');
             $table->integer('halaman');
             $table->integer('juz');
             $table->foreignId('surat_id');

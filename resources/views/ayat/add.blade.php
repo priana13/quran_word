@@ -26,6 +26,12 @@
 
                       <div class="form-group">
                         <!-- <label >Halaman</label> -->
+                        <input class="form-control" type="number" name="urutan" placeholder="Surat Ke" >
+                      </div>
+
+
+                      <div class="form-group">
+                        <!-- <label >Halaman</label> -->
                         <input class="form-control" type="number" name="halaman" placeholder="Halaman" >
                       </div>
 

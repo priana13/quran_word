@@ -27,6 +27,11 @@
 
                       <div class="form-group">
                         <!-- <label >Halaman</label> -->
+                        <input class="form-control" type="number" name="urutan" placeholder="Surat Ke" value="{{$ayat->halaman}}" >
+                      </div>
+
+                      <div class="form-group">
+                        <!-- <label >Halaman</label> -->
                         <input class="form-control" type="number" name="halaman" placeholder="Halaman" value="{{$ayat->halaman}}">
                       </div>
 
@@ -51,7 +56,7 @@
                     <!-- /.card-body -->
 
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">Simpan</button>
+                        <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
                     </div>
                   </form>
                 </div>

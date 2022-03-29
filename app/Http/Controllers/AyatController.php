@@ -46,6 +46,7 @@ class AyatController extends Controller
         $ayat = Ayat::insertGetId([
             "ayat" => $request->get('ayat'),
             "arti" => $request->get('arti'),
+            "urutan"=> $request->get('urutan'),
             "halaman" => $request->get('halaman'),
             "juz" => $request->get('juz'),
             "surat_id" => $request->get('surat')
@@ -99,6 +100,7 @@ class AyatController extends Controller
         $ayat->ayat =  $request->get('ayat');
         $ayat->arti = $request->get('arti');
         $ayat->halaman = $request->get('halaman');
+        $ayat->urutan = $request->get('urutan');
         $ayat->juz = $request->get('juz');
         $ayat->surat_id = $request->get('surat');
         $ayat->save();
