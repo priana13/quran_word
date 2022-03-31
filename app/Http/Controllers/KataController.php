@@ -20,7 +20,7 @@ class KataController extends Controller
         $title = "List Kata";
         $data = Kata::paginate(10);
 
-
+        
         return view('kata.index',compact(['data','title']));
     }
 

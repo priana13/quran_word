@@ -39,6 +39,7 @@
                         <form class="form-inline"  action="{{ route('kata.destroy', $row->id) }}" method ="post">
                         @csrf
                         @method('delete')
+
                         <input type="submit" value="delete" class="btn btn-sm btn-tool">
                         <!-- <i class="fas fa-trash fa-sm"></i> -->
                         </input>
@@ -61,7 +62,7 @@
                         
                     <p class="d-flex flex-column text-right">
                       <span class="font-weight-bold">
-                        <i class="ion ion-android-arrow-up text-success"></i> 12
+                        <i class="ion ion-android-arrow-up text-success"></i> {{ $row->kata_ayat->count() }}
                       </span>
                       <span class="text-muted">{{ $row->arti }}</span>
                     </p>

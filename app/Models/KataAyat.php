@@ -12,4 +12,9 @@ class KataAyat extends Model
     protected $table = 'kata_ayat';
 
     protected $guarded = [];
+
+    public function kata(){
+
+    	return $this->belongsTo(Kata::class,'kata_id');
+    }
 }

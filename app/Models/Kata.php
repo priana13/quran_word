@@ -10,4 +10,9 @@ class Kata extends Model
     use HasFactory;
 
     protected $table = 'kata';
+
+    public function kata_ayat(){
+
+    	return $this->hasMany(KataAyat::class , 'kata_id');
+    }
 }
