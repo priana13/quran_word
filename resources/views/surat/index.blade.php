@@ -52,16 +52,13 @@
                       </p>
 
 
-                      
-
-
 
                     </td>
                       <td>
                         
                     <p class="d-flex flex-column text-right">
                       <span class="font-weight-bold">
-                        <i class="ion ion-android-arrow-up text-success"></i> 12
+                        <i class="ion ion-android-arrow-up text-success"></i> Surat ke- {{ $row->urutan_surat }} | {{ $row->jumlah_ayat }} Ayat
                       </span>
                       <span class="text-muted">{{ $row->arti }}</span>
                     </p>

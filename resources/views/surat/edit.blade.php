@@ -8,7 +8,7 @@
         
         <div class="row">
 
-            <div class="col-md-6">
+            <div class="col">
               <!-- Form Element sizes -->
               <div class="card card-success">
                   <div class="card-header">
@@ -19,8 +19,14 @@
                     @method('put')
 
                    <div class="card-body">
+
+                    <div class="row">
+                      <input class="form-control form-control-lg col-md-3" type="number" placeholder="No" name="urutan_surat" value="{{$surat->urutan_surat}}">
+
+                      <input class="form-control form-control-lg col-md-9" type="text" placeholder="Nama Surat" name="nama_surat" value="{{$surat->nama_surat}}">
+                    </div>
                     
-                      <input class="form-control form-control-lg" type="text" placeholder="Nama Surat" name="nama_surat" value="{{$surat->nama_surat}}">
+                      
                       <br>
                       <input class="form-control" type="text" placeholder="Arti" name="arti" value="{{$surat->arti}}">
                       <br>

@@ -40,6 +40,7 @@ class SuratController extends Controller
     {
         
         $validated = $request->validate([
+            'urutan_surat' => 'required | numeric',
             'nama_surat' => 'required|string|max:255',
             'arti' => 'string|max:100',
             'deskripsi' => 'string',
@@ -48,6 +49,7 @@ class SuratController extends Controller
 
 
         $surat = Surat::insertGetId([
+            "urutan_surat" => $request->get('urutan_surat'),
             "nama_surat" => $request->get('nama_surat'),
             "arti" => $request->get('arti'),
             "deskripsi" => $request->get('deskripsi'),
@@ -93,6 +95,7 @@ class SuratController extends Controller
     public function update(Request $request, $id)
     {
         $validated = $request->validate([
+            'urutan_surat' => 'required | numeric',
             'nama_surat' => 'required|string|max:255',
             'arti' => 'string|max:100',
             'deskripsi' => 'string',
@@ -102,6 +105,7 @@ class SuratController extends Controller
 
         $surat = Surat::find($id);
 
+        $surat->urutan_surat = $request->urutan_surat;
         $surat->nama_surat = $request->nama_surat;
         $surat->arti = $request->arti;
         $surat->deskripsi = $request->deskripsi;

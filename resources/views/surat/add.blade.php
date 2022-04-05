@@ -8,7 +8,7 @@
         
         <div class="row">
 
-            <div class="col-md-6">
+            <div class="col">
               <!-- Form Element sizes -->
               <div class="card card-success">
                   <div class="card-header">
@@ -18,8 +18,16 @@
                     @csrf
 
                    <div class="card-body">
-                    
-                      <input class="form-control form-control-lg" type="text" placeholder="Nama Surat" name="nama_surat">
+
+                    <div class="row">
+                      <input class="form-control form-control-lg col-md-3" type="number" placeholder="No" name="urutan_surat">
+
+                      <input class="form-control form-control-lg col-md-9" type="text" placeholder="Nama Surat" name="nama_surat">
+
+                    </div>
+
+
+                     
                       <br>
                       <input class="form-control" type="text" placeholder="Arti" name="arti">
                       <br>
