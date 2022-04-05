@@ -12,4 +12,9 @@ class Surat extends Model
     protected $table = 'surat';
 
     protected $guarded = [];
+
+    public function ayat(){
+
+        return $this->hasMany(Ayat::class, 'surat_id');
+    }
 }

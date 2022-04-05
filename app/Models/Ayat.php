@@ -12,4 +12,9 @@ class Ayat extends Model
     protected $table = 'ayat';
 
     protected $guarded = [];
+
+    public function surat(){
+
+        return $this->belongsTo(Surat::class, 'surat_id');
+    }
 }

@@ -8,7 +8,7 @@
         
         <div class="row">
 
-            <div class="col-md-6">
+            <div class="col">
               <!-- Form Element sizes -->
               <div class="card card-success">
                   <div class="card-header">
@@ -26,7 +26,7 @@
 
                       <div class="form-group">
                         <!-- <label >Halaman</label> -->
-                        <input class="form-control" type="number" name="urutan" placeholder="Surat Ke" >
+                        <input class="form-control" type="number" name="urutan" placeholder="Ayat Ke" >
                       </div>
 
 

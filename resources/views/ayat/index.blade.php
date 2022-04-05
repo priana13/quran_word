@@ -50,16 +50,12 @@
                       </p>
 
 
-                      
-
-
-
                     </td>
                       <td>
                         
                     <p class="d-flex flex-column text-right">
                       <span class="font-weight-bold">
-                        <i class="ion ion-android-arrow-up text-success"></i> 12
+                        {{ $row->surat->nama_surat }} | {{ $row->urutan }}
                       </span>
                       <span class="text-muted">{{ $row->arti }}</span>
                     </p>
