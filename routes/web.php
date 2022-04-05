@@ -28,7 +28,7 @@ Route::resource('/kata', KataController::class)->middleware(['auth']);
 Route::resource('/ayat', AyatController::class)->middleware(['auth']);
 Route::resource('/surat', SuratController::class)->middleware(['auth']);
 Route::resource('/user', UserController::class)->middleware(['auth']);
-Route::get('user/profile', [UserController::class , 'profile'])->name('profile')->middleware(['auth']);
+Route::get('/profile', [UserController::class , 'profile'])->name('profile')->middleware(['auth']);
 
 
 

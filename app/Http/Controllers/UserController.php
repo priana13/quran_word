@@ -144,6 +144,8 @@ class UserController extends Controller
         
 
         $user->delete();
+
+        return redirect()->back()->with('message', 'Akun Berhasil Dihapus');;
     }
 
     public function profile(){
