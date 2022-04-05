@@ -124,6 +124,9 @@ class KataController extends Controller
      */
     public function destroy($id)
     {
+
+        // $kata_ayat = KataAyat::where('kata_id' , $id)->delete();
+
         $kata = Kata::find($id);
         $kata->delete();
 
