@@ -20,7 +20,7 @@ class KataController extends Controller
         $title = "List Kata";
         $data = Kata::paginate(10);
 
-        
+
         return view('kata.index',compact(['data','title']));
     }
 
@@ -44,17 +44,26 @@ class KataController extends Controller
      */
     public function store(Request $request)
     {
-        // $data = $request->all();
-        // dd($data);
 
-        $kata = Kata::insertGetId([
+        // tambah validasi di sini 
+        
+        // cek kata di database
+        $cek_kata = Kata::where('kata' , $request->get('kata'))->first();
+     
+        if($cek_kata){
+
+            $kata_id = $cek_kata->id;
+
+        }else{
+
+            $kata_id = Kata::insertGetId([
                 "kata" => $request->get('kata'),
                 "arti" => $request->get('arti')
                 ]);
-
+        }  
             
         KataAyat::insert([
-            "kata_id" => $kata,
+            "kata_id" => $kata_id,
             "ayat_id" => $request->get('ayat'),
             // "surat_id" => $request->get('surat')
         ]);
