@@ -216,13 +216,9 @@
           @endif
 
           <li class="nav-item mt-2">
-            <form action="{{ route('logout') }}" method="post">
-              @csrf 
-              <button class="btn btn-sm btn-primary" type="submit">
-                <i class="far fa-logout nav-icon"></i>
-                Logout
-              </button>              
-            </form>
+
+            <a class="nav-link" id = "logout" href="">Logout</a>
+            <i class="far fa-logout nav-icon"></i>
 
           </li>
         
@@ -293,5 +289,29 @@
 <script src="/dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="/dist/js/pages/dashboard3.js"></script>
+
+<script>
+
+  $('#logout').click(function(){
+
+     event.preventDefault();
+
+     $.ajax({
+        url: '{{ route("logout") }}' , 
+        method : 'POST' , 
+        data: {
+          _token : '{{ csrf_token() }}'
+        }, 
+        success: function(){
+
+            // location.reload();
+            location.href = '{{ route("login") }}' ;
+
+        }
+     });
+
+  });
+
+</script>
 </body>
 </html>
