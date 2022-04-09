@@ -31,5 +31,10 @@ Route::resource('/user', UserController::class)->middleware(['auth']);
 Route::get('/profile', [UserController::class , 'profile'])->name('profile')->middleware(['auth']);
 
 
+Route::get('front' , function() {
+
+    return view('layouts.front_app');
+});
+
 
 require __DIR__.'/auth.php';
