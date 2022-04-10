@@ -137,6 +137,10 @@
               </div>
             </div>
           </li> -->
+     
+      
+          @if(  auth()->check() )
+
           <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown" class="nav-link notification-toggle nav-link-lg beep"><i class="far fa-bell"></i></a>
             <div class="dropdown-menu dropdown-list dropdown-menu-right">
               <div class="dropdown-header">Notifications
@@ -196,6 +200,7 @@
               </div>
             </div>
           </li>
+          
           <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
             <img alt="image" src="stisla/img/avatar/avatar-1.png" class="rounded-circle mr-1">
             <div class="d-sm-none d-lg-inline-block">Hi, Ujang Maman</div></a>
@@ -216,6 +221,18 @@
               </a>
             </div>
           </li>
+         @else 
+
+         <li >
+           <a class="nav-link" href="{{ route('register') }}">Register</a>
+         </li>
+
+         <li >
+           <a class="nav-link" href="{{ route('login') }}">Login</a>
+         </li>
+
+         @endif
+
         </ul>
       </nav>
 

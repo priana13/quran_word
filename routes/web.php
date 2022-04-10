@@ -18,8 +18,14 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', function () {
-    return redirect()->route('login');
+// Route::get('/', function () {
+//     return redirect()->route('login');
+// });
+
+
+Route::get('/' , function() {
+
+    return view('layouts.front_app');
 });
 
 Route::get('/dashboard', [KataController::class,'index'])->middleware(['auth'])->name('dashboard');
@@ -31,10 +37,6 @@ Route::resource('/user', UserController::class)->middleware(['auth']);
 Route::get('/profile', [UserController::class , 'profile'])->name('profile')->middleware(['auth']);
 
 
-Route::get('front' , function() {
-
-    return view('layouts.front_app');
-});
 
 
 require __DIR__.'/auth.php';
