@@ -34,7 +34,11 @@
                       <td>
                       <p class="text-success text-xl">
                         {{-- <i class="ion ion-ios-refresh-empty"></i> --}}
-                        {{ $row->kata }}
+                        <a href="{{ route('kata.show', $row->id) }}">
+
+                          {{ $row->kata }}
+
+                        </a>
                        
                         <form class="form-inline"  action="{{ route('kata.destroy', $row->id) }}" method ="post">
                         @csrf

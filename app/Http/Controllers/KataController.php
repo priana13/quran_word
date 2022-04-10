@@ -80,7 +80,9 @@ class KataController extends Controller
      */
     public function show($id)
     {
-        return "ini adalah halaman detail dengan id" . $id;
+        $kata = Kata::find($id);
+
+        return view('kata.detail' , compact('kata'));
     }
 
     /**
