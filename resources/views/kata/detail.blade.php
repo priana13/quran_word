@@ -6,14 +6,16 @@
         <div class="section-header">
         <h1>{{ $kata->kata }}</h1>
         <div class="section-header-breadcrumb">
-            <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
-            <div class="breadcrumb-item">tes</div>
+            <div class="breadcrumb-item active"><a href="/dashboard">Dashboard</a></div>            
         </div>
         </div>
         <div class="section-body">
         <h2 class="section-title">{{ $kata->arti }}</h2>
         <p class="section-lead">
-            Change information about yourself on this page.
+            @foreach($kata->kata_ayat as $row)
+            <span>{{ $row->ayat->surat->nama_surat_latin }} - {{ $row->ayat->urutan }}: <strong>{{ $row->arti_kontek }}</strong>,</span>
+            @endforeach
+           
         </p>
 
         <div class="row mt-sm-4">
@@ -23,22 +25,26 @@
                 <img alt="image" src="/stisla/img/avatar/avatar-1.png" class="rounded-circle profile-widget-picture">
                 <div class="profile-widget-items">
                     <div class="profile-widget-item">
-                    <div class="profile-widget-item-label">Posts</div>
-                    <div class="profile-widget-item-value">187</div>
+                    <div class="profile-widget-item-label">Total</div>
+                    <div class="profile-widget-item-value">{{ $kata->kata_ayat->count() }}</div>
                     </div>
                     <div class="profile-widget-item">
-                    <div class="profile-widget-item-label">Followers</div>
-                    <div class="profile-widget-item-value">6,8K</div>
+                    <div class="profile-widget-item-label">Surat</div>
+                    <div class="profile-widget-item-value">-</div>
                     </div>
                     <div class="profile-widget-item">
-                    <div class="profile-widget-item-label">Following</div>
-                    <div class="profile-widget-item-value">2,1K</div>
+                    <div class="profile-widget-item-label">Ayat</div>
+                    <div class="profile-widget-item-value">-</div>
                     </div>
                 </div>
                 </div>
                 <div class="profile-widget-description">
-                <div class="profile-widget-name">Ujang Maman <div class="text-muted d-inline font-weight-normal"><div class="slash"></div> Web Developer</div></div>
-                Ujang maman is a superhero name in <b>Indonesia</b>, especially in my family. He is not a fictional character but an original hero in my family, a hero for his children and for his wife. So, I use the name as a user in this template. Not a tribute, I'm just bored with <b>'John Doe'</b>.
+                <div class="profile-widget-name">Detail</div>
+
+                <p>
+                    {{ $kata->deskripsi }}
+                </p>
+
                 </div>
                 <div class="card-footer text-center">
                 <div class="font-weight-bold mb-2">Follow Ujang On</div>

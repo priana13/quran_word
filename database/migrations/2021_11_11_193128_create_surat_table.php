@@ -17,6 +17,7 @@ class CreateSuratTable extends Migration
             $table->id();
             $table->integer('urutan_surat');
             $table->string('nama_surat');
+            $table->string('nama_surat_latin')->nullable();
             $table->string('arti');
             $table->text('deskripsi')->nullable();
             $table->integer('jumlah_ayat')->nullable();

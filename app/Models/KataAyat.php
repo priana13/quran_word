@@ -17,4 +17,9 @@ class KataAyat extends Model
 
     	return $this->belongsTo(Kata::class,'kata_id');
     }
+
+    public function ayat(){
+
+    	return $this->belongsTo(Ayat::class,'ayat_id');
+    }
 }

@@ -17,4 +17,9 @@ class Ayat extends Model
 
         return $this->belongsTo(Surat::class, 'surat_id');
     }
+
+    public function kata_ayat(){
+
+    	return $this->hasMany(KataAyat::class , 'ayat_id');
+    }
 }
