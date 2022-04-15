@@ -42,6 +42,7 @@ class SuratController extends Controller
         $validated = $request->validate([
             'urutan_surat' => 'required | numeric',
             'nama_surat' => 'required|string|max:255',
+            'nama_surat_latin' => 'required|string|max:255',
             'arti' => 'string|max:100',
             'deskripsi' => 'string',
             'jumlah_ayat' => 'numeric'
@@ -51,6 +52,7 @@ class SuratController extends Controller
         $surat = Surat::insertGetId([
             "urutan_surat" => $request->get('urutan_surat'),
             "nama_surat" => $request->get('nama_surat'),
+            "nama_surat_latin" => $request->get('nama_surat_latin'),
             "arti" => $request->get('arti'),
             "deskripsi" => $request->get('deskripsi'),
             "jumlah_ayat" => $request->get('jumlah_ayat'),
@@ -97,6 +99,7 @@ class SuratController extends Controller
         $validated = $request->validate([
             'urutan_surat' => 'required | numeric',
             'nama_surat' => 'required|string|max:255',
+            'nama_surat_latin' => 'required|string|max:255',
             'arti' => 'string|max:100',
             'deskripsi' => 'string',
             'jumlah_ayat' => 'numeric'
@@ -107,6 +110,7 @@ class SuratController extends Controller
 
         $surat->urutan_surat = $request->urutan_surat;
         $surat->nama_surat = $request->nama_surat;
+        $surat->nama_surat_latin = $request->nama_surat_latin;
         $surat->arti = $request->arti;
         $surat->deskripsi = $request->deskripsi;
         $surat->jumlah_ayat = $request->jumlah_ayat;

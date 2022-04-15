@@ -21,9 +21,19 @@
                    <div class="card-body">
 
                     <div class="row">
-                      <input class="form-control form-control-lg col-md-3" type="number" placeholder="No" name="urutan_surat" value="{{$surat->urutan_surat}}">
+                      <div class="form-group col-md-3">
+                        <input class="form-control form-control-lg" type="number" placeholder="No" name="urutan_surat" value="{{$surat->urutan_surat}}">
+                      </div>
+                      
 
-                      <input class="form-control form-control-lg col-md-9" type="text" placeholder="Nama Surat" name="nama_surat" value="{{$surat->nama_surat}}">
+                      <div class="form-group col-md-5">
+                       <input class="form-control form-control-lg" type="text" placeholder="Nama Surat" name="nama_surat" value="{{$surat->nama_surat}}">
+                       </div> 
+                      
+
+                      <div class="form-group col-md-4">
+                        <input class="form-control form-control-lg" type="text" placeholder="Nama Surat Latin" name="nama_surat_latin" value="{{$surat->nama_surat_latin}}">
+                       </div>   
                     </div>
                     
                       
