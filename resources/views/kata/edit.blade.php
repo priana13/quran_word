@@ -8,7 +8,7 @@
         
         <div class="row">
 
-            <div class="col-md-6">
+            <div class="col-md-8">
               <!-- Form Element sizes -->
               <div class="card card-success">
                   <div class="card-header">
@@ -24,6 +24,15 @@
                       <br>
                       <input class="form-control" type="text" placeholder="Arti" value="{{$kata->arti}}" name="arti">
                       <br>
+
+                      <div class="form-group">
+                        <label for="exampleSelectBorder">Surat</label>
+                        <select class="custom-select form-control-border" id="surat" name="suarat">
+                          <option>Al-Fatihah</option>
+                          <option>Al-Baqoroh</option>
+                          <option>Al-Imron</option>
+                        </select>
+                      </div>
 
                       <div class="form-group">
                         <label for="exampleSelectBorder">Surat</label>

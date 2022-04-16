@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Models\Kata;
 use App\Models\KataAyat;
+use App\Models\Surat;
 
 
 class KataController extends Controller
@@ -32,8 +33,9 @@ class KataController extends Controller
     public function create()
     {
         $title = "Tambah Kata";
+        $surat = Surat::all();
 
-        return view('kata.add', compact(['title']));
+        return view('kata.add', compact(['title' , 'surat']));
     }
 
     /**
@@ -97,7 +99,9 @@ class KataController extends Controller
 
         $kata = Kata::find($id);
 
-        return view('kata.edit', compact(['title', 'kata']));
+        $surat = Surat::all();
+
+        return view('kata.edit', compact(['title', 'kata' , 'surat']));
     }
 
     /**

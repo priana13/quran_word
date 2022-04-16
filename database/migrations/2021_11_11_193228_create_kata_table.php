@@ -17,6 +17,7 @@ class CreateKataTable extends Migration
             $table->id();
             $table->string('kata');
             $table->string('arti');
+            $table->string('type')->nullable();
             $table->text('deskripsi')->nullable();
             $table->timestamps();
         });

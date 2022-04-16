@@ -8,7 +8,7 @@
         
         <div class="row">
 
-            <div class="col-md-6">
+            <div class="col-md-8">
               <!-- Form Element sizes -->
               <div class="card card-success">
                   <div class="card-header">
@@ -26,15 +26,33 @@
 
                       <div class="form-group">
                         <label for="exampleSelectBorder">Surat</label>
-                        <select class="custom-select form-control-border" id="surat" name="suarat">
-                          <option value="1">Al-Fatihah</option>
+                        <select class="custom-select form-control-border" id="surat" name="surat">
+                          <option value="">Pilih Surat</option>
+                          
+                          @foreach($surat as $row)
+                            <option value="{{ $row->id }}">{{ $row->nama_surat }}</option>
+                          @endforeach
+
+                        </select>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="exampleSelectBorder">Type</label>
+                        <select class="custom-select form-control-border" id="surat" name="type">
+                          <option value="">Category / Type</option>
+                          <option value="isim">Isim</option>
+                          <option value="Fiil">Fi'il</option>
+                          <option value="huruf">Huruf</option>
                         </select>
                       </div>
 
                       <div class="form-group">
                         <label for="exampleSelectBorder">Ayat</label>
                         <select class="custom-select form-control-border" id="ayat" name="ayat">
+
                           <option value="1">1</option>
+                                             
+
                         </select>
                       </div>
 
