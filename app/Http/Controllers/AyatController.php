@@ -124,4 +124,14 @@ class AyatController extends Controller
 
         return redirect()->back();
     }
+
+    /**
+     * jumlah ayat
+     */
+    public function jumlah_ayat($id){
+
+        $surat = Surat::find($id);
+
+        return $surat->jumlah_ayat;
+    }
 }

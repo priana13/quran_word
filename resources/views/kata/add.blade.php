@@ -25,26 +25,27 @@
                       <br>
 
                       <div class="form-group">
-                        <label for="exampleSelectBorder">Surat</label>
-                        <select class="custom-select form-control-border" id="surat" name="surat">
-                          <option value="">Pilih Surat</option>
-                          
-                          @foreach($surat as $row)
-                            <option value="{{ $row->id }}">{{ $row->nama_surat }}</option>
-                          @endforeach
-
-                        </select>
-                      </div>
-
-                      <div class="form-group">
                         <label for="exampleSelectBorder">Type</label>
-                        <select class="custom-select form-control-border" id="surat" name="type">
+                        <select class="custom-select form-control-border" id="type" name="type">
                           <option value="">Category / Type</option>
                           <option value="isim">Isim</option>
                           <option value="Fiil">Fi'il</option>
                           <option value="huruf">Huruf</option>
                         </select>
                       </div>
+
+                      <div class="form-group">
+                        <label for="exampleSelectBorder">Surat</label>
+                        <select class="custom-select form-control-border" id="surat" name="surat">
+                          <option value="">Pilih Surat</option>
+                          
+                          @foreach($surat as $row)
+                            <option value="{{ $row['id'] }}">{{ $row['nama_surat'] }}</option>
+                          @endforeach
+
+                        </select>
+                      </div>
+
 
                       <div class="form-group">
                         <label for="exampleSelectBorder">Ayat</label>
@@ -78,5 +79,35 @@
       <!-- /.container-fluid -->
     </div>
     <!-- /.content -->
+
+    @push('footer')
+
+    <script> 
+
+        $('#surat').change(function(){
+
+          let id = $(this).val();
+          let ayat = $('#ayat');
+
+          $.ajax({
+              url: '/ayat/'+ id +'/jumlah', 
+              success : function(result){
+                // console.log(result)
+                ayat.empty();
+                for(let i=1 ; i <= result ; i++){                
+                  ayat.append('<option value="'+i+'"> '+i+' </option>');
+                }
+               
+              }
+              
+          });
+
+        });
+
+    </script>
+
+    @endpush
+
+   
 
 @endsection

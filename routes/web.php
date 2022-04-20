@@ -32,6 +32,7 @@ Route::get('/dashboard', [KataController::class,'index'])->middleware(['auth'])-
 
 Route::resource('/kata', KataController::class)->middleware(['auth']);
 Route::resource('/ayat', AyatController::class)->middleware(['auth']);
+Route::get('/ayat/{surat}/jumlah', [ AyatController::class , 'jumlah_ayat' ])->name('jumlah_ayat');
 Route::resource('/surat', SuratController::class)->middleware(['auth']);
 Route::resource('/user', UserController::class)->middleware(['auth']);
 Route::get('/profile', [UserController::class , 'profile'])->name('profile')->middleware(['auth']);

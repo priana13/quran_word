@@ -33,7 +33,7 @@ class KataController extends Controller
     public function create()
     {
         $title = "Tambah Kata";
-        $surat = Surat::all();
+        $surat = Surat::all()->toArray();
 
         return view('kata.add', compact(['title' , 'surat']));
     }
