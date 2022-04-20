@@ -29,7 +29,7 @@
                         <select class="custom-select form-control-border" id="type" name="type">
                           <option value="">Category / Type</option>
                           <option value="isim">Isim</option>
-                          <option value="Fiil">Fi'il</option>
+                          <option value="fiil">Fi'il</option>
                           <option value="huruf">Huruf</option>
                         </select>
                       </div>
