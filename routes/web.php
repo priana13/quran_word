@@ -26,7 +26,7 @@ use App\Http\Controllers\UserController;
 Route::get('/' , function() {
 
     return view('front.home');
-});
+})->name('home');
 
 Route::get('/dashboard', [KataController::class,'index'])->middleware(['auth'])->name('dashboard');
 

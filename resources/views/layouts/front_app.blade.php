@@ -30,15 +30,15 @@
     <div class="main-wrapper container">
       <div class="navbar-bg"></div>
       <nav class="navbar navbar-expand-lg main-navbar">
-        <a href="index.html" class="navbar-brand sidebar-gone-hide">QuranWord</a>
+        <a href="{{ route('home') }}" class="navbar-brand sidebar-gone-hide">QuranWord</a>
         <a href="#" class="nav-link sidebar-gone-show" data-toggle="sidebar"><i class="fas fa-bars"></i></a>
         <div class="nav-collapse">
           <a class="sidebar-gone-show nav-collapse-toggle nav-link" href="#">
             <i class="fas fa-ellipsis-v"></i>
           </a>
           <ul class="navbar-nav">
-            <li class="nav-item active"><a href="#" class="nav-link">Surat</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Kosa Kata</a></li>
+            <li class="nav-item active"><a href="{{ route('surat.index') }}" class="nav-link">Surat</a></li>
+            <li class="nav-item"><a href="{{ route('kata.index') }}" class="nav-link">Kosa Kata</a></li>
             <li class="nav-item"><a href="#" class="nav-link">Donasi</a></li>
           </ul>
         </div>
@@ -206,7 +206,7 @@
             <div class="d-sm-none d-lg-inline-block">Hi, Ujang Maman</div></a>
             <div class="dropdown-menu dropdown-menu-right">
               <div class="dropdown-title">Logged in 5 min ago</div>
-              <a href="features-profile.html" class="dropdown-item has-icon">
+              <a href="{{ route('profile') }}" class="dropdown-item has-icon">
                 <i class="far fa-user"></i> Profile
               </a>
               <a href="features-activities.html" class="dropdown-item has-icon">
