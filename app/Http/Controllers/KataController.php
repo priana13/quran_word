@@ -117,6 +117,7 @@ class KataController extends Controller
 
         $kata->kata = $request->get('kata');
         $kata->arti = $request->get('arti');
+        $kata->deskripsi = $request->get('deskripsi');
         $kata->save();
 
         return redirect(route('kata.index'));

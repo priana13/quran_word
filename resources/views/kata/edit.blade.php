@@ -8,7 +8,7 @@
         
         <div class="row">
 
-            <div class="col-md-8">
+            <div class="col-md-12">
               <!-- Form Element sizes -->
               <div class="card card-success">
                   <div class="card-header">
@@ -34,6 +34,11 @@
                           <option value="fiil" <?php ($kata->type == 'fiil')? 'selected' : '';?> >Fi'il</option>
                           <option value="huruf" <?php ($kata->type == 'huruf')? 'selected' : '';?> >Huruf</option>
                         </select>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="">Deskripsi</label>
+                        <textarea class="form-control" name="deskripsi" id="" cols="30" rows="5">{{ $kata->deskripsi }}</textarea>
                       </div>
 
                       <h3>Surat:</h3>
